@@ -26,8 +26,9 @@ class TrelloConnector {
     }
 
     userDoingCards(lists) {
+        const TRELLO_LIST = getString(LIST_NAME);
         var filteredLists = lists
-            .filter(list => list.name == TRELLO_DOING_LIST)
+            .filter(list => list.name == TRELLO_LIST)
             .flatMap(list => {
                 var url = `${API_BASE_URL}/lists/${list.id}/cards?${this._key_token_qs()}`;
                 var listCardsResponse = UrlFetchApp.fetch(url, this.options);

@@ -30,8 +30,10 @@ function apiKeyClickHandler(e) {
 function tokenClickHandler(e) {
   var formInputs = e.formInputs;
   var token = formInputs['tokenInput']
+  var listName = formInputs['listNameInput'];
 
   saveString(TOKEN, token);
+  saveString(LIST_NAME, listName);
 
   // //fixme doesn't navigate and refresh
   // var nav = CardService.newNavigation().popToRoot();

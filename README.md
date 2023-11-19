@@ -4,7 +4,7 @@ GTrello is a GMail add-on, which adds Trello integration.
 Project was created to solve single problem: gather all tasks in single place.  
 As I'm heavy user of both Trello and Google tasks to schedule tasks I was lacking a feature to have them under one roof.
 
-Currently add-on displays Trello Cards from list named `Doing` from every starred board user is member of.
+Currently add-on displays Trello Cards from list the name user provided on 'Token' screen from every starred board user is member of.
 This is actively developed and behavior will be customizable
 
 I simply lost the grasp of many tasks I have on my GTasks and Trello boards, thus simple aggreagtion under one roof is a huge help for me.

@@ -23,6 +23,10 @@ function trelloTokenInputSection() {
   var tokenInput = CardService.newTextInput()
     .setFieldName('tokenInput')
     .setTitle('Trello token');
+  
+  var listNameInput = CardService.newTextInput()
+    .setFieldName('listNameInput')
+    .setTitle('Trello list to display');
 
   var button = CardService.newTextButton()
     .setText('Connect')
@@ -35,6 +39,7 @@ function trelloTokenInputSection() {
   var section = CardService.newCardSection()
     .setHeader("Trello token required")
     .addWidget(tokenInput)
+    .addWidget(listNameInput)
     .addWidget(button);
 
   return section;
