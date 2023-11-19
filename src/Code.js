@@ -10,7 +10,7 @@ Main todos:
  */
 
 function createMainCard(sections) {
-  var cardBuilder = CardService.newCardBuilder().setName("GTrello");
+  var cardBuilder = mainCard();
   for (section of sections) {
     cardBuilder.addSection(section);
   }

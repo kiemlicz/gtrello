@@ -1,3 +1,18 @@
+function mainCard() {
+  var m = CardService.newCardBuilder()
+    .setName("GTrello");
+
+  if (has(LIST_NAME)) {
+    var h = CardService.newCardHeader()
+      .setTitle(`Cards in: ${getString(LIST_NAME)}`)
+      .setImageStyle(CardService.ImageStyle.SQUARE)
+      .setImageUrl(IMG_INBOX_URL);
+    m.setHeader(h);
+  }
+
+  return m;
+}
+
 function trelloApiKeyInputSection() {
   var apiKeyInput = CardService.newTextInput()
     .setFieldName('apiKeyInput')
@@ -54,8 +69,9 @@ function userBoards(boardsWithCards) {
 
       var section = CardService
         .newCardSection()
-        .setHeader(board.name);
-        // .setCollapsible(true); // by default is collaped thus it makes it click-away from reading...
+        .setHeader(board.name)
+        .setNumUncollapsibleWidgets(3)
+        .setCollapsible(true);
 
       for (card of cards) {
         section.addWidget(

@@ -19,7 +19,7 @@ In order to install, following setups must be made:
 Mind that the setup is not idempotent, multiple runs will yield multiple projects.  
 Add-on is installed as developer add-on
 ```
-> git clone
+> git clone https://github.com/kiemlicz/gtrello.git
 > npm install @google/clasp -g
 > # run setup providing Timezone i.e. ./setup.sh Europe/Warsaw
 > ./setup.sh Your/Timezone
