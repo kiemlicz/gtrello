@@ -34,7 +34,7 @@ In short:
 Somewhere along the setup or publish you might be asked to enable AppScript API which must be done.
 
 ### Trello setup
-To enable Trello API access, create [new integration](https://trello.com/power-ups/admin)
+To enable Trello API access, create [new integration](https://trello.com/power-ups/admin), name it `GTrello`
 
 ### Authorize Trello
 Once the add-on is installed, provide API key from Trello and follow authorization dialog, copy-pase token to GTrello
