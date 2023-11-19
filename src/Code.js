@@ -49,10 +49,9 @@ function buildApplication() {
   } else if (has(TOKEN)) {
     const connector = new TrelloConnector(getString(API_KEY), getString(TOKEN));
     var boardsWithCards = connector.userStarredBoards().map(board => {
-      var cards = connector.userDoingCards(board.lists);
+      var cards = connector.userCardsFiltered(board.lists, getString(LIST_NAME));
       return { "board": board, "cards": cards };
     });
-
     return userBoards(boardsWithCards);
   } else {
     return [trelloApiKeyInputSection()];

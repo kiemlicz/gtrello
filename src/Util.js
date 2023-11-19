@@ -42,3 +42,11 @@ function dropCache() {
   //this drops Properties too
   dropAll();
 }
+
+function truncateString(str, charNum) {
+  if (str.length <= charNum) {
+    return str;
+  } else {
+    return str.slice(0, charNum) + '...';
+  }
+}

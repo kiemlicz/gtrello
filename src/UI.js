@@ -23,7 +23,7 @@ function trelloTokenInputSection() {
   var tokenInput = CardService.newTextInput()
     .setFieldName('tokenInput')
     .setTitle('Trello token');
-  
+
   var listNameInput = CardService.newTextInput()
     .setFieldName('listNameInput')
     .setTitle('Trello list to display');
@@ -46,25 +46,27 @@ function trelloTokenInputSection() {
 }
 
 function userBoards(boardsWithCards) {
-  var sections = [];
-
-  boardsWithCards
+  return boardsWithCards // {board, cards}
     .filter(boardWithCards => boardWithCards.cards.length > 0) // don't render empty section
-    .forEach(boardWithCards => {
+    .map(boardWithCards => {
       var board = boardWithCards.board;
       var cards = boardWithCards.cards;
-      var section = CardService.newCardSection().setHeader(board.name);
+
+      var section = CardService
+        .newCardSection()
+        .setHeader(board.name)
+        .setCollapsible(true); // by default is collaped
 
       for (card of cards) {
         section.addWidget(
           CardService
-            .newTextButton()
-            .setText(card.name)
+            .newDecoratedText()
+            .setTopLabel(card.name)
+            .setText(truncateString(card.desc, 100))
             .setOpenLink(CardService.newOpenLink().setUrl(card.url))
+            .setWrapText(true)
         );
       }
-      sections.push(section);
+      return section;
     });
-
-  return sections;
 }
