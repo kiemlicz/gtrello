@@ -1,0 +1,36 @@
+{
+  "timeZone": "Europe/Warsaw",
+  "dependencies": {},
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/gmail.addons.execute",
+    "https://www.googleapis.com/auth/script.external_request"
+  ],
+  "urlFetchWhitelist": [
+    "https://api.trello.com/"
+  ],
+  "addOns": {
+    "common": {
+      "name": "GTrello",
+      "logoUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/png/action/view_kanban/materialicons/24dp/2x/baseline_view_kanban_black_24dp.png",
+      "universalActions": [
+        {
+          "label": "Drop cache",
+          "runFunction": "dropCache"
+        }
+      ]
+    },
+    "gmail": {
+      "name": "GTrello",
+      "logoUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/png/action/view_kanban/materialicons/24dp/2x/baseline_view_kanban_black_24dp.png",
+      "contextualTriggers": [],
+      "homepageTrigger": {
+        "enabled": true,
+        "runFunction": "mainApp"
+      },
+      "primaryColor": "#0000FF",
+      "secondaryColor": "#000000"
+    }
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
