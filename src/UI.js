@@ -54,8 +54,8 @@ function userBoards(boardsWithCards) {
 
       var section = CardService
         .newCardSection()
-        .setHeader(board.name)
-        .setCollapsible(true); // by default is collaped
+        .setHeader(board.name);
+        // .setCollapsible(true); // by default is collaped thus it makes it click-away from reading...
 
       for (card of cards) {
         section.addWidget(
