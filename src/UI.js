@@ -77,9 +77,9 @@ function userBoards(boardsWithCards) {
         section.addWidget(
           CardService
             .newDecoratedText()
-            .setText(`<b>${card.name}</b><br/>${truncateString(card.desc, 100)}`)
-            .setOpenLink(CardService.newOpenLink().setUrl(card.url))
+            .setText(`<b><u>${card.name}</u></b><br>${truncateString(card.desc, 100)}`)
             .setWrapText(true)
+            .setOpenLink(CardService.newOpenLink().setUrl(card.url))            
         );
       }
       return section;
