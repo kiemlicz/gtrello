@@ -2,7 +2,8 @@
 GTrello is a GMail add-on, which adds Trello integration.
 
 Project was created to solve single problem: gather all tasks in single place.  
-As I'm heavy user of both Trello and Google tasks to schedule tasks I was lacking a feature to have them under one roof.
+I'm heavy user of both Trello and Google tasks to schedule tasks,  
+I was lacking a feature to have them under one roof.
 
 Currently add-on displays Trello Cards from list the name user provided on 'Token' screen from every starred board user is member of.
 This is actively developed and behavior will be customizable
@@ -11,11 +12,11 @@ I simply lost the grasp of many tasks I have on my GTasks and Trello boards, thu
 
 ## Installation
 In order to install, following setups must be made:
-- GMail add-on install
-- Enable Trello access
-- Authorize GTrello to Trello
+1. Install GTrello as GMail add-on
+2. Enable Trello access
+3. Authorize GTrello to Trello
 
-### GMail add-on installation
+### Install GTrello as GMail add-on
 Mind that the setup is not idempotent, multiple runs will yield multiple projects.  
 Add-on is installed as developer add-on
 ```
@@ -33,11 +34,14 @@ In short:
 
 Somewhere along the setup or publish you might be asked to enable AppScript API which must be done.
 
-### Trello setup
+### Enable Trello access
 To enable Trello API access, create [new integration](https://trello.com/power-ups/admin), name it `GTrello`
 
 ### Authorize Trello
-Once the add-on is installed, provide API key from Trello and follow authorization dialog, copy-pase token to GTrello
+Once the add-on is installed, provide API key from Trello (`GTrello` power-up, `API key` tab) and follow authorization dialog.
+Copy token, close the window and paste token to GTrello add-on.  
+Provide the Trello list name.  
+All cards from all user's boards from that particular list will be displayed.
 
 ### Developing
 Simply after changes run

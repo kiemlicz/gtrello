@@ -71,7 +71,7 @@ function navigateToTrelloAuth(apiKey) {
   var action = CardService.newAuthorizationAction().setAuthorizationUrl(authUrl);
 
   var card = CardService.newCardBuilder()
-    .setHeader(CardService.newCardHeader().setTitle("Authorize to Trello"))
+    .setHeader(CardService.newCardHeader().setTitle("Proceed with authorization"))
     .addSection(CardService.newCardSection()
       .addWidget(CardService.newTextButton().setText("Connect to Trello").setAuthorizationAction(action))
     )
