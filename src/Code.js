@@ -40,19 +40,19 @@ function tokenClickHandler(e) {
   // return CardService.newActionResponseBuilder()
   //   .setNavigation(nav)
   //   .build();
-  return createMainCard(buildApplication()); //todo this leaves the 'back' arrow
+  return createMainCard(buildApplication()); //todo this leaves the 'back' arrow, check https://developers.google.com/apps-script/add-ons/how-tos/navigation#navigation_best_practice
 }
 
 function buildApplication() {
-  if (has(API_KEY) && !has(TOKEN)) { //fixme is it possible to omit this section? get token from reply?
-    return [trelloTokenInputSection()];
-  } else if (has(TOKEN)) {
+  if (has(TOKEN)) {
     const connector = new TrelloConnector(getString(API_KEY), getString(TOKEN));
     var boardsWithCards = connector.userStarredBoards().map(board => {
       var cards = connector.userCardsFiltered(board.lists, getString(LIST_NAME));
       return { "board": board, "cards": cards };
     });
     return userBoards(boardsWithCards);
+  } else if (has(API_KEY)) { //todo is it possible to omit this section? get token from reply?
+    return [trelloTokenInputSection()];
   } else {
     return [trelloApiKeyInputSection()];
   }
