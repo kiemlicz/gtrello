@@ -11,6 +11,7 @@ This is actively developed and behavior will be customizable
 I simply lost the grasp of many tasks I have on my GTasks and Trello boards, thus simple aggreagtion under one roof is a huge help for me.
 
 ## Installation
+Application is not published publicly.  
 In order to install, following setups must be made:
 1. Install GTrello as GMail add-on
 2. Enable Trello access
@@ -33,15 +34,18 @@ In short:
 1. Deploy -> Test Deployments -> Install
 
 Somewhere along the setup or publish you might be asked to enable AppScript API which must be done.
+If not then navigate to [GCloud](https://console.cloud.google.com/), setup dedicated project and find `Apps Script API` -> `Enable`
 
 ### Enable Trello access
 To enable Trello API access, create [new integration](https://trello.com/power-ups/admin), name it `GTrello`
 
 ### Authorize Trello
-Once the add-on is installed, provide API key from Trello (`GTrello` power-up, `API key` tab) and follow authorization dialog.
-Copy token, close the window and paste token to GTrello add-on.  
-Provide the Trello list name.  
-All cards from all user's boards from that particular list will be displayed.
+Once the add-on is installed:  
+- `Authorize access`
+- then provide API key from Trello (`GTrello` power-up, `API key` tab) and follow authorization dialog.
+  Copy token, close the window and paste token to GTrello add-on.  
+  Provide the Trello list name.  
+  All cards from all user's boards from that particular list will be displayed.
 
 ### Developing
 Simply after changes run
